@@ -227,10 +227,22 @@ cascade was preventing some from applying correctly */
   padding: 50px;
   margin: 50px;
 }
+.header h1{
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 560px) {
+  .header-content{
+    padding: 5px;
+  }
+  .header h1{
+    margin-bottom: 0;
+  }
+}
 
 @media (max-width: 490px) {
-  .header-title {
-    font-size: xx-large;
+  .header h1 {
+    font-size: 50px;
   }
 }
 
