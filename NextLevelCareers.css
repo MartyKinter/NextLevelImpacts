@@ -1,0 +1,616 @@
+/*==================== BASE ====================*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 400%;
+}
+
+/*==================== TOP MENU ====================*/
+.top-navbar {
+  background-color: #004b7a;
+  color: white;
+  padding: 10px 5%;
+  display: flex;
+  justify-content: space-between;
+  position: static;
+  width: 90%;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  /* display: flex; */
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.logo img {
+  margin-right: 10px;
+  width: 25px;
+}
+
+.menu {
+  width: 50%;
+  /* display: flex; */
+  justify-content: space-around;
+  color: white;
+  position: relative;
+  background: #004b7a;
+  display: none;
+}
+
+.menu ul {
+  margin: 0;
+  margin-top: 1.6em;
+  padding: 0;
+  list-style: none;
+}
+
+.menu li {
+  text-align: right;
+  margin-bottom: 0.5em;
+  margin-left: 0.5em;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  color: #f2f2f2;
+}
+
+.menu a:hover {
+  color: #000;
+}
+
+/****** created styling for responsive dropdown that appears at 848px */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label:hover {
+  cursor: pointer;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0.7em;
+  margin-right: 1em;
+}
+
+/****** when checkbox is checked applys this to all preceeding navs */
+/****** makes the dropdown appear and disappear */
+.nav-toggle:checked~nav {
+  display: block;
+}
+
+@media (min-width: 848px) {
+  nav {
+    border: 0;
+  }
+
+  .menu ul {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+
+  .menu li {
+    margin-left: 20px;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .nav-toggle-label {
+    display: none;
+    top: -50px;
+    right: -50px;
+  }
+
+  .menuMain ul {
+    display: flex;
+    justify-content: flex-end;
+    /* Move the menu items to the right */
+  }
+}
+
+/*==================== MENU MAIN ====================*/
+.main-navbar {
+  background-color: #f2f2f2;
+  color: black;
+  padding: 10px 5%;
+  display: flex;
+  justify-content: space-between;
+  position: static;
+  width: 90%;
+  height: 80px;
+  z-index: 1000;
+}
+
+.mainLogo {
+  display: flex;
+  align-items: center;
+}
+
+.mainLogo img {
+  height: 60px;
+  width: auto;
+}
+
+.menuMain {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/****** changed to ul with diplay flex  */
+.menuMain ul {
+  display: flex;
+  list-style: none;
+  flex-grow: 1;
+}
+
+.menuMain li {
+  margin-left: 30px;
+}
+
+.menuMain a:hover {
+  color: #000;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuMain a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  color: #004b7a;
+}
+
+/****** at this size the menuMain starts to squish so changed it to a stacked list */
+/****** moved menuMain media queries bellow menuMain base styles because 
+cascade was preventing some from applying correctly */
+@media (max-width: 723px) {
+  .menuMain ul {
+    flex-direction: column;
+  }
+
+  .menuMain li {
+    margin-bottom: 3px;
+  }
+}
+
+@media (max-width: 390px) {
+  .menuMain a {
+    font-size: 13px;
+  }
+}
+
+/*==================== HEADER ====================*/
+.header {
+  background: url("https://previews.123rf.com/images/chagin/chagin1305/chagin130500400/19729949-happy-business-people-in-a-meeting-at-office.jpg") center/cover no-repeat;
+  height: 400px;
+  position: relative;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlayHeader {
+  background-color: rgba(0, 75, 122, 0.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.header-content {
+  z-index: 1;
+  padding: 3.5%;
+  margin: 3.5%;
+}
+
+.rounded-button {
+  display: inline-block;
+  margin-top: 10px;
+  /* Adjust the top margin as needed to create space between text and button */
+  padding: 15px 30px;
+  background-color: #004b7a;
+  /* background-color: transparent; */
+  border: 2px solid #f2f2f2;
+  color: #f2f2f2;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.rounded-button:hover {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+/*==================== CONTENT ====================*/
+/***** changed margins to % so they shrink better */
+.content {
+  background-color: #f2f2f2;
+  padding: 3.5%;
+  margin: 3.5%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.content a {
+  text-decoration: none;
+}
+
+.industry-headings {
+  margin-left: 3.5%;
+  text-decoration: underline;
+}
+
+.industry-headings:hover {
+  color: black;
+}
+
+.content-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.content img {
+  flex-direction: row;
+  max-width: 100%;
+  /* Ensure the image doesn't exceed its container */
+  /* margin-right: 20px;  */
+  /* Adjust the spacing between image and text */
+}
+
+.content-text {
+  flex: 1;
+  margin-left: 20px;
+  /* Allow the text to take remaining space */
+}
+
+.content h2 {
+  color: #004b7a;
+}
+
+.content p {
+  font-size: 18px;
+  color: #230007;
+}
+
+.content2 {
+  background-color: #004b7a;
+  padding: 3.5%;
+  margin: 3.5%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.content2 img {
+  max-width: 100%;
+  /* margin-left: 20px; */
+}
+
+.content2-text {
+  flex: 1;
+  /* margin-right: 20px; */
+}
+
+.content2 h2 {
+  color: #886f68;
+}
+
+.content2 p {
+  font-size: 18px;
+  color: #e6e6e6;
+}
+
+@media (max-width: 860px) {
+
+  .content-text {
+    margin-left: 0px;
+  }
+
+  .content2 {
+    flex-direction: column;
+    /* Stack elements in a column */
+  }
+
+  .content2-text {
+    margin-right: 0px;
+  }
+}
+
+/*==================== TESTIMONIAL ====================*/
+.testimonial-carousel {
+  background-color: white;
+  padding: 50px;
+  margin: 50px;
+  text-align: left;
+  overflow: hidden;
+  border: 3px #e6e6e6 solid;
+  text-align: center;
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width */
+}
+
+.testimonials-content {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+  /* Ensure the content takes full width */
+}
+
+.testimonial {
+  flex: 0 0 100%;
+  /* Each testimonial takes full width */
+  color: #004b7a;
+  padding: 0 20px;
+  /* Adjust padding as needed */
+  white-space: normal;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+/*==================== CAREERS ====================*/
+.career-img {
+  width: 170px;
+  height: 150px;
+}
+
+.image-container-career {
+  position: relative;
+  display: inline-block;
+  margin: 1rem 2rem;
+  /* Ensures the container only takes as much space as the image */
+}
+
+.image-container-career:hover .overlay {
+  opacity: 1;
+  /* When hovering over the image container, the overlay becomes visible */
+}
+
+/*==================== TEAM ====================*/
+.headshot {
+  width: 350px;
+  height: 350px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  /* Ensures the container only takes as much space as the image */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,
+      0,
+      0,
+      0.7);
+  /* Semi-transparent black overlay */
+  color: white;
+  /* Text color on the overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  /* Initially, the overlay is invisible */
+  transition: 0.3s;
+  /* Smooth transition for the overlay effect */
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+  /* When hovering over the image container, the overlay becomes visible */
+}
+
+/* Additional styles for the overlay text */
+.overlay-text {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px;
+  color: white;
+}
+
+.text {
+  color: white;
+}
+
+/*==================== FOOTER ====================*/
+
+.footer-container {
+  background-color: #004b7a;
+  padding: 3%;
+  display: flex;
+  flex-direction: row;
+  column-gap: 13rem;
+}
+
+.footer-logo {
+  width: 350px;
+}
+
+.footer-industries {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  color: white;
+  text-align: left;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: row;
+  column-gap: 15rem;
+}
+
+.footer-industries h3 {
+  font-size: larger;
+  font-weight: 600;
+}
+
+.footer-industries p {
+  font-size: small;
+  margin: 0;
+}
+
+.footer-industries a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-links {
+  padding-top: 7%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  list-style: none;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: flex-end;
+}
+
+.footer-address {
+  display: flex;
+  flex-direction: column;
+  column-gap: 1rem;
+  align-items: center;
+}
+
+.address {
+  color: white;
+  font-size: small;
+}
+
+.phone {
+  color: white;
+  font-size: small;
+}
+
+.site-map {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-socials {
+  display: flex;
+  padding-left: 1.8rem;
+}
+
+.footer-social-icon {
+  padding: 0 10px;
+}
+
+.footer-link:hover {
+  color: black;
+}
+
+* {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1120px) {
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding-top: 0%;
+  }
+}
+
+@media (max-width: 1060px) {
+
+  .footer-container {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .footer-right {
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .footer-section {
+      margin: auto;
+    }
+
+  .footer-links {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    list-style: none;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 560px) {
+
+
+.footer-top {
+  flex-direction: column;
+}
+.footer-industries{
+  width: 100vw;
+}
+
+  .footer-socials {
+    padding-left: 0;
+  }
+  .site-map{
+    align-self: center;
+    justify-self: center;
+    row-gap: 1rem;
+  }
+}
