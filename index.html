@@ -8,44 +8,6 @@
     <link rel="stylesheet" href="./styles.css" />
 
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Didact Gothic', sans-serif; /* Use Didact Gothic font */
-        }
-
-        header {
-            position: relative;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 2; /* Ensure the header is above the hero image */
-        }
-
-        #logo img {
-            width: 217px; /* Set the width to half of the new width (434 / 2) */
-            height: 78px; /* Set the height to half of the new height (156 / 2) */
-        }
-
-        nav {
-            display: flex;
-            align-items: center; /* Center the items vertically */
-            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-            backdrop-filter: blur(10px); /* Apply a blur effect for a frosted glass appearance */
-            border-radius: 10px; /* Add rounded corners */
-            padding: 10px;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 2; /* Ensure the navigation bar is above the hero image */
-        }
-
-            nav a {
-                color: #004B7A;
-                text-decoration: none;
-                margin: 0 15px;
-            }
 
         .hero {
             height: 100vh;
@@ -133,18 +95,39 @@
 <body>
     <header>
         <div id="logo"><img src="./images/logo.png" alt="Your Logo"></div>
-        <nav>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    
+        <nav class="menu-new">
             <a href="./index.html">Home</a>
             <a href="#">Contact</a>
             <a href="#">Clients</a>
-            <a href="#">Why Next Level Impacts</a>
+            <a href="#">
+                Why Next Level Impacts
+            </a>
             <a href="#">Services</a>
             <a href="./NextLevelAbout.html">About</a>
             <a href="#">For Candidates</a>
             <a href="#">For Employers</a>
-
-
+    
+    
         </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0,0,256,256">
+                    <g fill="#004b7a" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(5.12,5.12)">
+                            <path
+                                d="M5,8c-0.72127,-0.0102 -1.39216,0.36875 -1.75578,0.99175c-0.36361,0.623 -0.36361,1.39351 0,2.01651c0.36361,0.623 1.0345,1.00195 1.75578,0.99175h40c0.72127,0.0102 1.39216,-0.36875 1.75578,-0.99175c0.36361,-0.623 0.36361,-1.39351 0,-2.01651c-0.36361,-0.623 -1.0345,-1.00195 -1.75578,-0.99175zM5,23c-0.72127,-0.0102 -1.39216,0.36875 -1.75578,0.99175c-0.36361,0.623 -0.36361,1.39351 0,2.01651c0.36361,0.623 1.0345,1.00195 1.75578,0.99175h40c0.72127,0.0102 1.39216,-0.36875 1.75578,-0.99175c0.36361,-0.623 0.36361,-1.39351 0,-2.01651c-0.36361,-0.623 -1.0345,-1.00195 -1.75578,-0.99175zM5,38c-0.72127,-0.0102 -1.39216,0.36875 -1.75578,0.99175c-0.36361,0.623 -0.36361,1.39351 0,2.01651c0.36361,0.623 1.0345,1.00195 1.75578,0.99175h40c0.72127,0.0102 1.39216,-0.36875 1.75578,-0.99175c0.36361,-0.623 0.36361,-1.39351 0,-2.01651c-0.36361,-0.623 -1.0345,-1.00195 -1.75578,-0.99175z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </span>
+        </label>
+    
     </header>
 
     <div class="hero">
