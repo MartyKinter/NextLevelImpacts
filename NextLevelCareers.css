@@ -1,13 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic:wght@400;700&display=swap");
+
 /*==================== BASE ====================*/
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-}
+  font-family: 'Didact Gothic', sans-serif; /* Use Didact Gothic font */}
 
 h1 {
   font-size: 400%;
 }
+
+/*==================== HEADER ====================*/
+
+header {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  /* Ensure the header is above the hero image */
+}
+
+  #logo img {
+    width: 217px;
+    /* Set the width to half of the new width (434 / 2) */
+    height: 78px;
+    /* Set the height to half of the new height (156 / 2) */
+  }
 
 /*==================== TOP MENU ====================*/
 .top-navbar {
@@ -44,6 +64,15 @@ h1 {
   position: relative;
   background: #004b7a;
   display: none;
+}
+
+.menu-new {
+  display: none;
+  margin-top: -2.5em;
+}
+
+.menu-new a {
+  display: flex;
 }
 
 .menu ul {
@@ -93,8 +122,17 @@ h1 {
 .nav-toggle:checked~nav {
   display: block;
 }
+@media (max-width: 974px) {
+  .menu-new {
+    margin-top: 1.6rem;
+  }
 
-@media (min-width: 848px) {
+  .menu-new a {
+    margin-top: .6em;
+  }
+}
+
+@media (min-width: 975px) {
   nav {
     border: 0;
   }
@@ -112,6 +150,10 @@ h1 {
   .menu {
     display: block;
   }
+
+        .menu-new {
+          display: flex;
+        }
 
   .nav-toggle-label {
     display: none;
@@ -614,3 +656,26 @@ cascade was preventing some from applying correctly */
     row-gap: 1rem;
   }
 }
+
+                                                                nav {
+                                                                  display: flex;
+                                                                  align-items: center;
+                                                                  /* Center the items vertically */
+                                                                  background: rgba(255, 255, 255, 0.8);
+                                                                  /* Semi-transparent white background */
+                                                                  backdrop-filter: blur(10px);
+                                                                  /* Apply a blur effect for a frosted glass appearance */
+                                                                  border-radius: 10px;
+                                                                  /* Add rounded corners */
+                                                                  padding: 10px;
+                                                                  top: 10px;
+                                                                  right: 10px;
+                                                                  z-index: 2;
+                                                                  /* Ensure the navigation bar is above the hero image */
+                                                                }
+                                
+                                                                nav a {
+                                                                  color: #004B7A;
+                                                                  text-decoration: none;
+                                                                  margin: 0 15px;
+                                                                }

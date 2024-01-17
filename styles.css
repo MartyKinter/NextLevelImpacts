@@ -1,12 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic:wght@400;700&display=swap");
+
 /*==================== BASE ====================*/
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-}
+  font-family: 'Didact Gothic', sans-serif; /* Use Didact Gothic font */
+  }
 
 h1 {
   font-size: 400%;
+}
+
+
+/*==================== HEADER ====================*/
+
+header {
+  /* position: relative; */
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  /* Ensure the header is above the hero image */
+}
+
+#logo img {
+  width: 217px;
+  /* Set the width to half of the new width (434 / 2) */
+  height: 78px;
+  /* Set the height to half of the new height (156 / 2) */
 }
 
 /*==================== TOP MENU ====================*/
@@ -46,6 +68,15 @@ h1 {
   display: none;
 }
 
+.menu-new{
+  display: none;
+  margin-top: -2.5em;
+}
+
+.menu-new a {
+  display: flex;
+}
+
 .menu ul {
   margin: 0;
   margin-top: 1.6em;
@@ -76,6 +107,10 @@ h1 {
   display: none;
 }
 
+.nav-toggle-label:hover {
+  cursor: pointer;
+}
+
 .nav-toggle-label {
   position: absolute;
   top: 0;
@@ -89,8 +124,17 @@ h1 {
 .nav-toggle:checked~nav {
   display: block;
 }
+@media (max-width: 974px) {
+   .menu-new{
+      margin-top: 1.6rem;
+   }
 
-@media (min-width: 848px) {
+   .menu-new a{
+    margin-top: .6em;
+   }
+}
+
+@media (min-width: 975px) {
   nav {
     border: 0;
   }
@@ -109,10 +153,15 @@ h1 {
     display: block;
   }
 
+  .menu-new{
+    display: flex;
+  }
+
   .nav-toggle-label {
     display: none;
     top: -50px;
     right: -50px;
+      margin-right: 1em;
   }
 
   .menuMain ul {
@@ -185,6 +234,9 @@ h1 {
 /****** moved menuMain media queries bellow menuMain base styles because 
 cascade was preventing some from applying correctly */
 @media (max-width: 723px) {
+  nav{
+    flex-wrap: wrap;
+  }
   .menuMain ul {
     flex-direction: column;
   }
@@ -580,3 +632,117 @@ cascade was preventing some from applying correctly */
     row-gap: 1rem;
   }
 }
+
+
+
+
+                                nav {
+                                  display: flex;
+                                  align-items: center;
+                                  /* Center the items vertically */
+                                  background: rgba(255, 255, 255, 0.8);
+                                  /* Semi-transparent white background */
+                                  backdrop-filter: blur(10px);
+                                  /* Apply a blur effect for a frosted glass appearance */
+                                  border-radius: 10px;
+                                  /* Add rounded corners */
+                                  padding: 10px;
+                                  top: 10px;
+                                  right: 10px;
+                                  z-index: 2;
+                                  /* Ensure the navigation bar is above the hero image */
+                                }
+                
+                                nav a {
+                                  color: #004B7A;
+                                  text-decoration: none;
+                                  margin: 0 15px;
+                                }
+                
+                                .hero {
+                                  height: 100vh;
+                                  background: url('./images/mountainHero.jpeg') center/cover no-repeat;
+                                  display: flex;
+                                  align-items: center;
+                                  justify-content: center;
+                                  text-align: center;
+                                  color: #fff;
+                                  transition: opacity 0.5s ease-in-out;
+                                  position: relative;
+                                  z-index: 1;
+                                  /* Ensure the hero image is behind the header and navigation bar */
+                                }
+                
+                                .hero h1 {
+                                  margin: 0;
+                                }
+                
+                                /* .content-container {
+                                  padding: 20px;
+                                  position: relative;
+                                  z-index: 2;
+                                }
+                
+                                .content,
+                                .content2 {
+                                  opacity: 0;
+                                  transform: translateY(20px);
+                                  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+                                }
+                
+                                .content.show,
+                                .content2.show {
+                                  opacity: 1;
+                                  transform: translateY(0);
+                                }
+                
+                                body.no-scroll {
+                                  overflow: auto;
+                                }
+                
+                                .blank-page {
+                                  height: 100vh;
+                                  background: #fff;
+                                  display: none;
+                                }
+                
+                                .content,
+                                .content2 {
+                                  background-color: #f2f2f2;
+                                  padding: 50px;
+                                  margin: 50px;
+                                  text-align: left;
+                                  display: flex;
+                                  align-items: center;
+                                }
+                
+                                .content img,
+                                .content2 img {
+                                  max-width: 100%;
+                                  margin-right: 20px;
+                                }
+                
+                                .content-text,
+                                .content2-text {
+                                  flex: 1;
+                                }
+                
+                                .content h2,
+                                .content2 h2 {
+                                  color: #004B7A;
+                                }
+                
+                                .content p,
+                                .content2 p {
+                                  font-size: 18px;
+                                  color: #230007;
+                                }
+                
+                                .content2 {
+                                  background-color: #004B7A;
+                                  color: #E6E6E6;
+                                }
+                
+                                .content2 h2 {
+                                  color: #886F68;
+                                } */
